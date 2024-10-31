@@ -1,7 +1,7 @@
 'use client';
 
 import { Button, Chip, Paper, Stack, TextField } from '@mui/material';
-import React, { useState } from 'react';
+import React, { FormEvent, useState } from 'react';
 import { Delete } from '@mui/icons-material';
 import { Circle } from '@/components/Circle';
 
@@ -23,7 +23,7 @@ export default function Home() {
         setList(list.filter((_, i) => i !== index));
     }
 
-    const handleAdd = (e) => {
+    const handleAdd = (e: FormEvent) => {
         e.preventDefault();
         if (input && !list.includes(input)) {
             setList([...list, input]);
